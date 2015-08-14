@@ -1,0 +1,22 @@
+{
+    "name": "delboy1978uk/phpbitcoin",
+    "description": "A PHP service for connecting to bitcoind. Also compatible with Zend Framework 2.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Derek McLean",
+            "email": "delboy1978uk@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "dev-master"
+    },
+    "require-dev":{
+        "codeception/codeception":"dev-master"
+    },
+    "autoload":{
+        "psr-4":{
+            "Del\\":"src/"
+        }
+    }
+}
