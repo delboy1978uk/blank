@@ -14,7 +14,7 @@ Rename the following files/folders:
 ```
 src/Blank.php
 tests/unit/Del/
-tests/unit/Del/Blank
+tests/unit/Del/BlankTest.php
 ```
 Finally, add your repository on Travis CI and Scrutinizer, then commit and push to your Github repository.
 Now Github has a commit with a composer.json, head over to Packagist and submit your repository.
