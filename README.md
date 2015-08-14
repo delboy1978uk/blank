@@ -23,4 +23,4 @@ Tests are done using the awesome Codeception! Run tests from the root folder by 
 ```
 vendor/bin/codecept run unit
 ```
-Tests will push to your Travis branch, which will push code coverage to scrutinizer. Now you can start making tests and not worry about setup!
+Tests will push to your Travis branch, which will push code coverage to scrutinizer. Now you can start making tests and not worry about setup.
