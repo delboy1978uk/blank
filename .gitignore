@@ -18,3 +18,9 @@ temp/
 # Legacy ZF1
 demos/
 extras/documentation
+
+#ide
+.idea/
+
+#test output
+tests/_output

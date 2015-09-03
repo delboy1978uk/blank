@@ -10,20 +10,20 @@ class BlankTest extends \Codeception\TestCase\Test
     protected $tester;
 
     /**
-     * @var Bitcoin
+     * @var Blank
      */
-    protected $btc;
+    protected $blank;
 
     protected function _before()
     {
         // create a fresh blank class before each test
-        $this->btc = new Blank();
+        $this->blank = new Blank();
     }
 
     protected function _after()
     {
         // unset the blank class after each test
-        unset($this->calc);
+        unset($this->blank);
     }
 
     /**
@@ -31,7 +31,7 @@ class BlankTest extends \Codeception\TestCase\Test
      */
     public function testBlah()
     {
-	    $this->assertEquals('Ready to start building tests',$this->btc->blah());
+	    $this->assertEquals('Ready to start building tests',$this->blank->blah());
     }
 
 
