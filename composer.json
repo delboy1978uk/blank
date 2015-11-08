@@ -9,7 +9,6 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "dev-master"
     },
     "require-dev":{
         "codeception/codeception":"dev-master"

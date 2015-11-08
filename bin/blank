@@ -15,8 +15,8 @@
 
     use Del;
     try {
-        $btc = new Blank();
-        echo $btc->blah();
+        $x = new Blank();
+        echo $x->blah();
     }
     catch(Exception $e){
         echo "There was a problem. \n".$e->getMessage()."\n\n";
