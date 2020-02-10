@@ -4,9 +4,9 @@ namespace Del;
 
 class BlankTest extends \Codeception\TestCase\Test
 {
-   /**
-    * @var \UnitTester
-    */
+    /**
+     * @var \UnitTester
+     */
     protected $tester;
 
     /**
@@ -31,7 +31,7 @@ class BlankTest extends \Codeception\TestCase\Test
      */
     public function testBlah()
     {
-	    $this->assertEquals('Ready to start building tests',$this->blank->blah());
+        $this->assertEquals('Ready to start building tests', $this->blank->blah());
     }
 
 
