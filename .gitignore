@@ -1,26 +1,5 @@
-# Composer files
+.idea
 composer.phar
+composer.lock
 vendor/
-
-# Local configs
-config/autoload/*.local.php
-
-# Binary gettext files
-*.mo
-
-# Data
-data/logs/
-data/cache/
-data/sessions/
-data/tmp/
-temp/
-
-# Legacy ZF1
-demos/
-extras/documentation
-
-#ide
-.idea/
-
-#test output
 tests/_output
