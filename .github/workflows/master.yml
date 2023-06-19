@@ -1,0 +1,57 @@
+name: main
+
+env:
+  DB_DATABASE: awesome
+  DB_USER: root
+  DB_PASSWORD: 'root'
+  APPLICATION_ENV: ci
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version:
+          - 8.0
+          - 8.1
+          - 8.2
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up MySQL
+        run: sudo service mysql start
+
+      - name: Create DB
+        run: mysql -e 'CREATE DATABASE ${{ env.DB_DATABASE }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - name: Run test suite with coverage
+        run: XDEBUG_MODE=coverage vendor/bin/codecept run unit --coverage-xml --env=ci
+
+      - name: Download Scrutinizer ocular.phar
+        run: composer require scrutinizer/ocular
+
+      - name: Upload coverage
+        run: vendor/bin/ocular code-coverage:upload --format=php-clover tests/_output/coverage.xml
