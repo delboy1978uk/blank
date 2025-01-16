@@ -4,19 +4,24 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Derek McLean",
+            "name": "Derek Stephen McLean",
             "email": "delboy1978uk@gmail.com"
         }
     ],
     "require": {
+        "php": "^8.3"
     },
     "require-dev":{
-        "codeception/codeception":"^4.2",
-        "codeception/module-asserts": "^2.0"
+        "delboy1978uk/dev-tools":"^v1.0"
     },
     "autoload":{
         "psr-4":{
             "Del\\":"src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "phpro/grumphp": false
         }
     }
 }
